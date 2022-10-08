@@ -54,6 +54,18 @@ color: var(--color-theme-dark-1);
         color: var(--color-white);
     } */
 
+.btn-light {
+    background-color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius-rounded);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+    .btn-light:hover {
+        transition: 0.3s ease-in-out; 
+        color: var(--color-white);
+        background-color: var(--color-theme-dark-1);
+    }
+
 
 /* navigation-bar */
 .navigation-bar .container {
@@ -79,50 +91,65 @@ color: var(--color-theme-dark-1);
     }
 
 
-.navigation-bar .icons button {
+/* .navigation-bar .icons button {
     margin: 5px ;
     background-color: var(--color-white);
-    /* color: var(--color-white); */
+    color: var(--color-white);
     border: none;
     border-radius: var(--border-radius-rounded);
-    /* transition: 0.3s ease-in-out; */
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-}
+    transition: 0.3s ease-in-out; 
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); 
+} */
 
 .navigation-bar.home {
     background-color: var(--color-gray-2); 
 }
 
 
+.navigation-bar .icons .icon {
+    display:flex; 
+    list-style: none; 
+}
+.navigation-bar .icons .icon li {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+
+
+
+
+
+
 /* hero-section */
 .hero-section {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 80px;
     background-color: var(--color-gray-2); 
-    
+}
+.hero-section .container {
+    display: flex;
+    justify-content: space-between; 
 }
 
 .hero-section .hero-body {   
     text-align: center; 
     margin-top: 140px;
+    margin-left: 50px;
 }
 .hero-section .hero-body h1 {   
    font-weight: var(--font-weight-extra-bold);
-   font-size: 3.5rem;
+   font-size: 3rem;
 }
-/* .hero-section .hero-body p {   
-    text-align: center; 
-    margin-top: 140px;
-}  */
+
+.hero-section .hero-body p {   
+    margin-top: 20px;
+}
 
 .hero-section .hero-image-left img {
-    width: 400px;
-    margin-left: 80px;
+    width: 450px;
 }
 .hero-section .hero-image-right img {
-    width: 400px;
-    margin-right: 80px;
+    width: 450px;
+    margin-left: 50px;
 }
 
 
@@ -225,13 +252,13 @@ color: var(--color-theme-dark-1);
                         }
 
                         .product-section .card .card-menu li {
-                        margin: 5px ;
+                        /* margin: 5px ;
                         background-color: var(--color-white);
-                        /* color: var(--color-white); */
+                        color: var(--color-white); 
                         border: none;
                         border-radius: var(--border-radius-rounded);
-                        /* transition: 0.3s ease-in-out; */
-                        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+                        transition: 0.3s ease-in-out; 
+                        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);  */
                     }
                     
 
