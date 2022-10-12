@@ -45,25 +45,46 @@ a {
     color: var(--color-theme-dark-2);
 }
 
-a:hover{
-    color: var(--color-theme);
-}
+    a:hover{
+        color: var(--color-theme);
+    }
 
-
-/* ska denna vara kvar? */
 .btn-theme {
+    position: relative;
+    text-align: center;
     background-color: var(--color-theme);
     color: var(--color-white);
     font-weight: var(--font-weight-semi-bold);
     font-size: 0.8rem;
-    padding-left: 1.75rem;
-    padding-right: 1.75rem;
+    padding: 10px 35px;
     border-radius: 0;
 }
-    /* .btn-theme:hover {
-        background-color: var(--color-theme-dark);
+    .btn-theme:hover {
+        transition: 0.3s ease-in-out; 
         color: var(--color-white);
-    } */
+        background-color: var(--color-theme-dark-1);
+    } 
+
+.btn-theme-left-border,
+.btn-theme-right-border {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+}
+
+.btn-theme-left-border {
+    left: 5px;
+    top: 5px;
+    border-left: 2px solid var(--color-white);
+    border-top: 2px solid var(--color-white);
+}
+.btn-theme-right-border {
+    right: 5px;
+    bottom: 5px;
+    border-right: 2px solid var(--color-white);
+    border-bottom: 2px solid var(--color-white);
+}
+
 
 .btn-light {
     background-color: var(--color-white);
@@ -79,6 +100,10 @@ a:hover{
         color: var(--color-white);
         background-color: var(--color-theme-dark-1);
     }
+    
+.bg-theme {
+    background-color: var(--color-theme);
+}
 
 
 /* navigation-bar */
@@ -86,9 +111,9 @@ a:hover{
     display: flex;
     justify-content: space-between;
     padding-top: 30px;
+    /* om jag vill ha att logo och ikoner går kant i kant med container
     padding-left: 0;
-    padding-right: 0;
-    
+    padding-right: 0; */
 }
 
 .navigation-bar .logotype {
@@ -98,6 +123,7 @@ a:hover{
 .navigation-bar .navigation-links a {
     margin-left: 15px;
     margin-right: 15px;
+    font-size: 13px;
     font-weight: var(--font-weight-medium);
     text-decoration: none;
 }
@@ -112,6 +138,7 @@ a:hover{
     list-style: none; 
 }
     .navigation-bar .icons .icon a {
+        position: relative;
         padding: 10px;
         margin-left: 20px;
     }
@@ -165,17 +192,21 @@ a:hover{
 /* product-section featured-product */
 .product-section {
     padding-top: 4rem; 
-    
+}
+
+.product-section .container {
+    max-width: 900px;
 }
 
 .product-section .section-title h1{
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: var(--font-weight-bold);
 }
 .product-section .card {
     position: relative;
-    height: 300px;
+    height: 260px;
+    width: 200px;
     overflow: hidden;
     border-radius: 0;
     /* border: none; */
@@ -183,6 +214,9 @@ a:hover{
 
 .product-section .card img {
     height: 150px;
+    /*hans formattering: 
+    height: 210;
+    width: 255; */
     border-radius: 0;
 }
 
@@ -201,15 +235,23 @@ a:hover{
         /* height: 40%; */
     } 
         .product-section .card .card-body h5 {
-            font-size: 12px;
+            font-size: 10.5px;
+            margin-bottom: 5px;
             color: var(--color-gray-5);
         }
         .product-section .card .card-body p {
+            font-size: 13px;
             font-weight: var(--font-weight-semi-bold);
         }
+
+        .product-section .card .card-body .stars {
+            margin-top: -15px;
+            margin-bottom: 3px;
+            color: var(--color-theme);
+        }
         .product-section .card .card-body .price {
+            font-size: 15px;
             font-weight: var(--font-weight-semi-bold);
-            /* font-size: ska vara större än p */
         } 
 
 
@@ -267,9 +309,7 @@ a:hover{
 
 
                     
-                    .product-section .card .card-body .stars {
-                        color: var(--color-theme);
-                    }
+                   
       
                     
 
@@ -297,7 +337,7 @@ a:hover{
 
 
 .map h1 {
-    font-size: 16px;
+    font-size: 13px;
     font-weight: var(--border-radius-medium);
     padding-top: 2rem;
     padding-bottom: 1.5rem;
