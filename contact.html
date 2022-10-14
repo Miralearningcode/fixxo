@@ -15,7 +15,7 @@
 <body>
     
     <header>
-        <nav class="navigation-bar">
+        <nav class="navigation-bar" style="display:none">
             <div class="container border">
                 <div class="logotype">
                     <img src="images/logotype.svg" alt="Fixxo logotype">
@@ -45,17 +45,26 @@
         </div>
     </section>
 
-    <section class="map">
+    <section class="map" style="display:none">
         <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52822.663853695725!2d18.129728551951168!3d59.32966505365234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f763119640bcb%3A0xa80d27d3679d7766!2sStockholm!5e0!3m2!1ssv!2sse!4v1665668822204!5m2!1ssv!2sse"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
     
     <section class="contact-form">
         <div class="container">
              <h2>Come in Contact with Us</h2>
-             <form>
-                <input id="name" type="text">
-                <input id="email" type="email">
-                <textarea name="message"></textarea>
+             <form onsubmit="submitForm(event)" novalidate>
+                <div>
+                    <input id="name"  type="text" onkeyup="validate(event)" placeholder="Your name">
+                    <div id="nameErrorMessage" class="errorMessage"></div>
+                </div>
+                <div>
+                    <input id="email" type="email" onkeyup="validate(event)" placeholder="Your email">
+                    <div id="emailErrorMessage"class="errorMessage"></div>
+                </div>
+                <div class="textarea">
+                    <textarea id="comment" onkeyup="validate(event)" placeholder="Comments"></textarea>
+                    <div id="commentErrorMessage" class="errorMessage"></div>
+                </div>
                 <div>
                     <button type="submit" class="btn-theme">
                         <span class="btn-theme-left-border"></span>
