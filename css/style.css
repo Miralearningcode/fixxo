@@ -206,9 +206,6 @@ a {
     display: flex;
     justify-content: space-between;
     padding-top: 30px;
-    /* om jag vill ha att logo och ikoner går kant i kant med container
-    padding-left: 0;
-    padding-right: 0; */
 }
 
 .navigation-bar .logotype {
