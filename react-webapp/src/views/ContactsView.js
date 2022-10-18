@@ -5,7 +5,6 @@ const ContactsView = () => {
   return (
     <>
       <NavigationBarSection />
-      <h1>Contacts</h1>
     </>
   )
 }

@@ -1,13 +1,12 @@
 import React from 'react'
 import NavigationBarSection from '../sections/NavigationBarSection'
 
-const NotFoundView = () => {
+const WishListView = () => {
   return (
     <>
       <NavigationBarSection />
-      <h1>404 - Page Not Found</h1>
     </>
   )
 }
 
-export default NotFoundView
+export default WishListView
