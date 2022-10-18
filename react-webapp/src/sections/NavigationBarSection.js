@@ -4,18 +4,18 @@ import IconComponent from '../components/IconComponent'
 
 const NavigationBarSection = () => {
   return (
-    <nav class="navigation-bar">
-        <div class="container">
-            <div class="logotype">
+    <nav className="navigation-bar">
+        <div className="container">
+            <div className="logotype">
                 Fixxo.
             </div>
-                <div class="navigation-links">
-                    <NavLink to="/">Home</NavLink>
-                    <NavLink to="/categories">Categories</NavLink>
-                    <NavLink to="/products">Products</NavLink>
-                    <NavLink to="/contacts">Contacts</NavLink>
+                <div className="navigation-links">
+                    <NavLink className="navigation-link" to="/">Home</NavLink>
+                    <NavLink className="navigation-link" to="/categories">Categories</NavLink>
+                    <NavLink className="navigation-link" to="/products">Products</NavLink>
+                    <NavLink className="navigation-link" to="/contacts">Contacts</NavLink>
                 </div>
-            <div class="icons">
+            <div className="icons">
                 <IconComponent link="/search" icon="fa-light fa-magnifying-glass" />
                 <IconComponent link="/compare" icon="fa-light fa-light fa-repeat" />
                 <IconComponent link="/wishlist" icon="fa-light fa-heart" />

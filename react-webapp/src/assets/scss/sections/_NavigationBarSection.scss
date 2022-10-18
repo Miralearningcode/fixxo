@@ -1,0 +1,39 @@
+.navigation-bar {
+    // width: 100%;
+    // position: fixed;
+    // z-index: 3; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 30px;
+
+    // .container {
+       
+    // }
+
+    .logotype {
+        font-size: 30px;
+        font-weight: var(--font-weight-bold);
+    }    
+
+    .navigation-links {
+        margin-left: 50px;
+        
+        .navigation-link {
+            margin-left: 15px;
+            margin-right: 15px; 
+            font-size: 13px;
+            font-weight: var(--font-weight-medium);
+            text-decoration: none;
+        }
+    }
+
+    .icons {
+        .icon {
+           i {
+
+           } 
+        }
+    }
+}  
+

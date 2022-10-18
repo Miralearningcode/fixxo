@@ -5,6 +5,7 @@ const HomeView = () => {
   return (
     <>
       <NavigationBarSection />
+      <h1>Home</h1>
     </>
   )
 }

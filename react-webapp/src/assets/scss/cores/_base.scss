@@ -1,0 +1,163 @@
+
+html, body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: var(--font-poppins);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-theme-dark-1);
+    }
+    
+    a {
+        color: var(--color-theme-dark-2);
+    }
+    
+        a:hover{
+            color: var(--color-theme);
+        }
+    
+    .btn-theme {
+        position: relative;
+        text-align: center;
+        background-color: var(--color-theme);
+        color: var(--color-white);
+        font-weight: var(--font-weight-semi-bold);
+        font-size: 0.8rem;
+        padding: 10px 35px;
+        border-radius: 0;
+    }
+        .btn-theme:hover {
+            transition: 0.3s ease-in-out; 
+            color: var(--color-white);
+            background-color: var(--color-theme-dark-1);
+        } 
+    
+    .btn-theme-left-border,
+    .btn-theme-right-border {
+        position: absolute;
+        height: 15px;
+        width: 15px;
+    }
+    
+    .btn-theme-left-border {
+        left: 5px;
+        top: 5px;
+        border-left: 2px solid var(--color-white);
+        border-top: 2px solid var(--color-white);
+    }
+    .btn-theme-right-border {
+        right: 5px;
+        bottom: 5px;
+        border-right: 2px solid var(--color-white);
+        border-bottom: 2px solid var(--color-white);
+    }
+    
+    .btn-light {
+        background-color: var(--color-white);
+        border: none;
+        border-radius: var(--border-radius-rounded);
+        box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+    }
+        .btn-light:hover {
+            transition: 0.3s ease-in-out; 
+            color: var(--color-white);
+            background-color: var(--color-theme-dark-1);
+        }
+        
+    .bg-theme {
+        background-color: var(--color-theme);
+    }
+    
+    .card {
+        position: relative;
+        height: 240px;
+        width: 200px;
+        overflow: hidden;
+        border-radius: 0;
+        border: none;
+    }
+    
+    .card img {
+        height: 150px;
+        border-radius: 0;
+    }
+    
+    .card .card-body {
+        padding-left: 0;
+        margin-top: -30px;
+    } 
+    
+        .card .card-body h5 {
+            margin:0;
+            font-size: 10.5px;
+            margin-bottom: 5px;
+            color: var(--color-gray-5);
+        }
+        .card .card-body p {
+            font-size: 13px;
+            font-weight: var(--font-weight-semi-bold);
+        }
+    
+        .card .card-body .stars {
+            margin-top: -15px;
+            margin-bottom: 3px;
+            color: var(--color-theme);
+            font-size: 12px;
+        }
+        .card .card-body .price {
+            font-size: 14px;
+            font-weight: var(--font-weight-semi-bold);
+        } 
+    
+    
+        .card .card-background {
+            position: absolute;
+            bottom: 40%;
+            height: 100%;
+            width: 100%;
+            background-color: var(--color-gray-3);
+            transition: height 0.2s ease-in-out;
+            z-index: -1;
+        }    
+            .card:hover .card-background {
+                height: 100%;
+                z-index: 1;
+            }
+    
+           .card .card-menu {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                z-index: -1;
+                /* right: 130px; */
+                /* padding: 0.8rem; */
+                /* font-size: 1.25rem; */
+                transition: 0.2s ease-in-out;
+                margin-top: -145px;
+                margin-left: 160px;
+                /* margin-bottom: -150px; */
+            }
+                .card:hover .card-menu {
+                    z-index: 2;
+                }
+                .card .card-menu a {
+                    /* storlek på iconerna */
+                    padding: 6px;
+                    margin: 4px;
+                    box-shadow: 0px 0px 9px 7px rgba(0, 0, 0, 0.1);
+                }
+          
+    .card .btn-theme {
+        display: inline-block;
+        width: 100%;
+        font-weight: var(--font-weight-regular);
+        margin-top: -60px;
+        z-index: -1;
+        transition: 0.2s ease-in-out;
+    }
+        .card:hover .btn-theme {
+            z-index: 2;
+        }
+    
