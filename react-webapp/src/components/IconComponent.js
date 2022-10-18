@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const IconComponent = ({link, icon}) => {
   return (
-    <NavLink className="icon btn btn-light btn-sm" to={link} >
+    <NavLink className="icon btn btn-light btn-sm" to={link} end>
         <i className={icon}></i>
     </NavLink>
   )

@@ -10,10 +10,10 @@ const NavigationBarSection = () => {
                 Fixxo.
             </div>
                 <div className="navigation-links">
-                    <NavLink className="navigation-link" to="/">Home</NavLink>
-                    <NavLink className="navigation-link" to="/categories">Categories</NavLink>
-                    <NavLink className="navigation-link" to="/products">Products</NavLink>
-                    <NavLink className="navigation-link" to="/contacts">Contacts</NavLink>
+                    <NavLink className="navigation-link" to="/" end>Home</NavLink>
+                    <NavLink className="navigation-link" to="/categories" end>Categories</NavLink>
+                    <NavLink className="navigation-link" to="/products" end>Products</NavLink>
+                    <NavLink className="navigation-link" to="/contacts" end>Contacts</NavLink>
                 </div>
             <div className="icons">
                 <IconComponent link="/search" icon="fa-light fa-magnifying-glass" />
