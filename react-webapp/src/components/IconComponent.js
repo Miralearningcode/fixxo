@@ -1,9 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const IconComponent = ({link, icon, quantity}) => {
+const IconComponent = ({link, icon, quantity, hideOnMobile, hideOnTablet}) => {
+
   return (
-    <NavLink className="icon btn btn-light btn-sm" to={link} end>
+    <NavLink className={`icon btn btn-light btn-sm ${hideOnMobile ? "hideOnMobile" : ""} ${hideOnTablet ? "hideOnTablet" : ""}`} to={link} end>
       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-theme">{quantity}</span>
       <i className={icon}></i>
     </NavLink>
