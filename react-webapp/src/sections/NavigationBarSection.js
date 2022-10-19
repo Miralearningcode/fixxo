@@ -15,9 +15,9 @@ const NavigationBarSection = () => {
                 </div>
             <div className="icons">
                 <IconComponent link="/search" icon="fa-light fa-magnifying-glass" />
-                <IconComponent link="/compare" icon="fa-light fa-light fa-repeat" />
-                <IconComponent link="/wishlist" icon="fa-light fa-heart" />
-                <IconComponent link="/shoppingcart" icon="fa-light fa-bag-shopping" />
+                <IconComponent link="/compare" icon="fa-light fa-code-compare" />
+                <IconComponent quantity="1" link="/wishlist" icon="fa-light fa-heart" />
+                <IconComponent quantity="3" link="/shoppingcart" icon="fa-light fa-bag-shopping" />
             </div>
         </div>
     </nav>
