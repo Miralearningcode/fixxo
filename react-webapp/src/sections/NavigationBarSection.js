@@ -6,9 +6,7 @@ const NavigationBarSection = () => {
   return (
     <nav className="navigation-bar">
         <div className="container">
-            <div className="logotype">
-                Fixxo.
-            </div>
+            <NavLink className="logotype" to="/" end>Fixxo.</NavLink>
                 <div className="navigation-links">
                     <NavLink className="navigation-link" to="/" end>Home</NavLink>
                     <NavLink className="navigation-link" to="/categories" end>Categories</NavLink>

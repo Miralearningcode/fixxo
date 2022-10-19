@@ -14,6 +14,12 @@
     .logotype {
         font-size: 30px;
         font-weight: $font-weight-bold;
+        color: $color-theme-dark-2;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-theme-dark-2;
+        }
     }    
 
     .navigation-links {

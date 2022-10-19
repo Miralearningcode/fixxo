@@ -12,6 +12,8 @@ import ShoppingCartView from './views/ShoppingCartView';
 
 
 import NotFoundView from './views/NotFoundView';
+import FooterSection from './sections/FooterSection';
+import NavigationBarSection from './sections/NavigationBarSection';
 
 function App() {
   return (
