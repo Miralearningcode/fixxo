@@ -75,3 +75,9 @@ html, body {
         background-color: $color-theme;
     }
     
+
+    @media (min-width: 1600px) {
+        .container {
+            max-width: $max-width;
+        }
+    }

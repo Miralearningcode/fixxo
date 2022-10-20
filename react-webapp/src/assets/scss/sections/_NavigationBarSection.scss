@@ -20,11 +20,6 @@
         font-weight: $font-weight-bold;
         color: $color-theme-dark-2;
         text-decoration: none;
-    
-
-        &:hover {
-            
-        }
     }    
 
     .navigation-links {
@@ -39,6 +34,10 @@
             color: $color-theme-dark-2;
             text-decoration: none;
             font-weight: $font-weight-medium;
+
+            &:hover {
+                color: $color-theme;
+            }
         }
 
         .active  {
@@ -68,19 +67,20 @@
     }
 }  
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .navigation-bar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "logo navigationlinks navigationicons";
     padding-top: 20px; 
     padding-bottom: 20px;
 
         .navigation-links {
             grid-area: navigationlinks;
-            display: inline;
-            overflow: hidden;
+            display: flex;
+            justify-content: center;
             height: 100%;
+            width: 100%;
             font-weight: $font-weight-medium;
         }
     }
