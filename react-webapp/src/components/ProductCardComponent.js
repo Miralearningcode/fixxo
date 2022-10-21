@@ -1,4 +1,6 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+
 
 const ProductCardComponent = () => {
   return (
@@ -7,28 +9,27 @@ const ProductCardComponent = () => {
             <div className= "card-img">
                 <img src="assets/images/card.png" alt="" />
                 <div className="card-menu">
-                    <a href="#" className="btn btn-light btn-sm"><i className="fa-light fa-heart"></i></a>
-                    <a href="#" className="btn btn-light btn-sm"><i className="fa-light fa-repeat"></i></a>
-                    <a href="#" className="btn btn-light btn-sm"><i className="fa-light fa-bag-shopping"></i></a>
+                    <button className="btn btn-light btn-sm" href="#"><i className="fa-light fa-heart"></i></button>
+                    <button className="btn btn-light btn-sm" href="#"><i className="fa-light fa-code-compare"></i></button>
+                    <button className="btn btn-light btn-sm" href="#"><i className="fa-light fa-bag-shopping"></i></button>
                 </div>
-                <a href="#" className="btn btn-lg btn-theme">
+                <NavLink To="/products/id" className="btn-theme btn-card-theme" href="#">
                     <span className="btn-theme-left-border"></span>
                     QUICK VIEW
                     <span className="btn-theme-right-border"></span>
-                </a>
+                </NavLink>
             </div>
-            <div className="card-background"></div>
             <div className="card-body">
-                <h5>Category</h5>
-                <p>Modern Black Blouse</p>
-                <div className="stars">
+                <p className ="card-category">Category</p>
+                <h5 className="card-title">Modern Black Blouse</h5>
+                <p className="card-rating">
                     <i className="fa-sharp fa-solid fa-star"></i>
                     <i className="fa-sharp fa-solid fa-star"></i>
                     <i className="fa-sharp fa-solid fa-star"></i>
                     <i className="fa-sharp fa-solid fa-star"></i>
                     <i className="fa-sharp fa-solid fa-star"></i>
-                </div>
-                <p className="price">$35</p>
+                </p>
+                <p className="card-price">$35</p>
             </div>         
         </div>
     </div>
