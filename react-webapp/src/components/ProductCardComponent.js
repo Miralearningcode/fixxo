@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import TempImg from '../assets/images/card-img.jpg'
 
 
 const ProductCardComponent = () => {
@@ -7,13 +8,13 @@ const ProductCardComponent = () => {
     <div className="col">
         <div className="card">
             <div className= "card-img">
-                <img src="assets/images/card.png" alt="" />
+                <img src={TempImg} alt="" />
                 <div className="card-menu">
                     <button className="btn btn-light btn-sm" href="#"><i className="fa-light fa-heart"></i></button>
                     <button className="btn btn-light btn-sm" href="#"><i className="fa-light fa-code-compare"></i></button>
                     <button className="btn btn-light btn-sm" href="#"><i className="fa-light fa-bag-shopping"></i></button>
                 </div>
-                <NavLink To="/products/id" className="btn-theme btn-card-theme" href="#">
+                <NavLink to="/products" className="btn-theme btn-card-theme">
                     <span className="btn-theme-left-border"></span>
                     QUICK VIEW
                     <span className="btn-theme-right-border"></span>
