@@ -17,7 +17,7 @@ const NavigationBarSection = () => {
                 <div className={ `navigation-links ${ showMenu ? "d-grid" : ""}` }>
                     <NavLink className="navigation-link" to="/" end>Home</NavLink>
                     <NavLink className="navigation-link" to="/categories" end>Categories</NavLink>
-                    <NavLink className="navigation-link" to="/products" end>Products</NavLink>
+                    <NavLink className="navigation-link" to="/products">Products</NavLink>
                     <NavLink className="navigation-link" to="/contacts" end>Contacts</NavLink>
                 </div>
             <div className="icons">
