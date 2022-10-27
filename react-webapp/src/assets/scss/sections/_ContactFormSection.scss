@@ -33,6 +33,12 @@
                 border: 1px solid $color-gray-3;
                 resize: none;
                 height: 100px;
+
+                
+            }
+            .error {
+                // color: $color-theme;
+                // border: 1px solid $color-theme;
             }
         }
 
@@ -41,14 +47,14 @@
         }
 
         .error {
-            color: $color-theme;
-            border: 1px solid $color-theme;
+            // color: $color-theme;
+            // border: 1px solid $color-theme;
         }
 
-        .error-message {
+        .errorMessage {
             margin-top: 5px;
             color: $color-theme;
-            font-size: 13px;
+            font-size: 10px;
         }
     }
 }
