@@ -1,34 +1,39 @@
 import React, { useState } from 'react'
 
 const ContactFormSection = () => {
-  const [contactForm, setContactForm] = useState({name: '', email: '', comment: ''})
-  const [formErrors, setFormErrors] = useState ({})
-  const [submitted, setSubmitted] = useState(false)
+    const [contactForm, setContactForm] = useState({name: '', email: '', comment: ''})
+    const [formErrors, setFormErrors] = useState ({})
+    const [submitted, setSubmitted] = useState(false)
 
-  const validate = (values) => {
-      const errors = {}
-      const regex_email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    const validate = (values) => {
+        const errors = {}
+        const regex_email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        const regex_name = /^[a-zA-Z ]{2,30}$/
 
-      if(!values.name)
-          errors.name = "You must enter a name"
+        if(!values.name)
+            errors.name = "You must enter a name"
 
-      if(!values.email)
-          errors.email = "You must enter a email adress"
-      else if(!regex_email.test(values.email))
-          errors.email = "You must enter a valid email adress (eg. name@domain.com)"
+        else if(!regex_name.test(values.name))
+            errors.name = "You must enter a valid name"
 
-      if(!values.comment)
-          errors.comment = "You must enter a comment"
-      else if(values.comment.length <5)
-          errors.comment = "Your comment must be longer than 5 characters"
+        if(!values.email)
+            errors.email = "You must enter a email adress"
+            
+        else if(!regex_email.test(values.email))
+            errors.email = "You must enter a valid email adress (eg. name@domain.com)"
 
-      if(Object.keys(errors).length === 0)
-          setSubmitted(true)
-      else 
-          setSubmitted(false)
+        if(!values.comment)
+            errors.comment = "You must enter a comment"
+        else if(values.comment.length <5)
+            errors.comment = "Your comment must be longer than 5 characters"
 
-      return errors;
-  }
+        if(Object.keys(errors).length === 0)
+            setSubmitted(true)
+        else 
+            setSubmitted(false)
+
+        return errors;
+    }
 
   const handleChange = (e) => {
       const {id, value} = e.target
@@ -38,6 +43,11 @@ const ContactFormSection = () => {
   const handleSubmit = (e) => {
       e.preventDefault()
       setFormErrors(validate(contactForm))
+  }
+
+  const handleKeyUp = (e) => {
+    e.preventDefault()
+    setFormErrors(validate(contactForm))
   }
 
   return (
@@ -55,15 +65,15 @@ const ContactFormSection = () => {
                         <pre>{JSON.stringify(formErrors) }</pre>
                         <form onSubmit={handleSubmit} noValidate>
                             <div>
-                                <input id="name" type="text"  className="error" placeholder="Your Name" value={contactForm.name} onChange={handleChange} />
+                                <input id="name" type="text"  className="error" onKeyUp={handleKeyUp} placeholder="Your Name" value={contactForm.name} onChange={handleChange} />
                                 <div className="errorMessage">{formErrors.name}</div>
                             </div>
                             <div>
-                                <input id="email" type="email" className="error" placeholder="Your email" value={contactForm.email} onChange={handleChange} />
+                                <input id="email" type="email" className="error" onKeyUp={handleKeyUp} placeholder="Your email" value={contactForm.email} onChange={handleChange} />
                                 <div className="errorMessage">{formErrors.email}</div>
                             </div>
                             <div className="textarea">
-                                <textarea id="comment" className="error" placeholder="Comments" value={contactForm.comment} onChange={handleChange}></textarea>
+                                <textarea id="comment" className="error" onKeyUp={handleKeyUp} placeholder="Comments" value={contactForm.comment} onChange={handleChange}></textarea>
                                 <div className="errorMessage">{formErrors.comment}</div>
                             </div>
                             <div className="formBtn">
