@@ -1,6 +1,8 @@
 import React from 'react'
 import BreadcrumbSection from '../sections/BreadcrumbSection'
+import ContactFormSection from '../sections/ContactFormSection'
 import FooterSection from '../sections/FooterSection'
+import MapSection from '../sections/MapSection'
 import NavigationBarSection from '../sections/NavigationBarSection'
 
 const ContactsView = () => {
@@ -8,9 +10,11 @@ const ContactsView = () => {
 
   return (
     <>
-      <NavigationBarSection />
+      {/* <NavigationBarSection />
       <BreadcrumbSection currentPage="Contacts" />
-      <FooterSection />
+      <MapSection />
+      <FooterSection /> */}
+      <ContactFormSection />
     </>
   )
 }
