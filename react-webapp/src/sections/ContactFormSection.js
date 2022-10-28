@@ -10,11 +10,11 @@ const ContactFormSection = () => {
         const regex_email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         const regex_name = /^[a-zA-Z ]{2,30}$/
 
-        if(!values.name)
+        if(!values.name) 
             errors.name = "You must enter a name"
-
-        else if(!regex_name.test(values.name))
-            errors.name = "You must enter a valid name"
+        
+        else if(!regex_name.test(values.name)) 
+            errors.name = "You must enter a valid name, minimum 2 characters and only letters"
 
         if(!values.email)
             errors.email = "You must enter a email adress"
@@ -24,6 +24,7 @@ const ContactFormSection = () => {
 
         if(!values.comment)
             errors.comment = "You must enter a comment"
+            
         else if(values.comment.length <5)
             errors.comment = "Your comment must be longer than 5 characters"
 
@@ -46,8 +47,9 @@ const ContactFormSection = () => {
   }
 
   const handleKeyUp = (e) => {
-    e.preventDefault()
-    setFormErrors(validate(contactForm))
+        e.preventDefault()
+        setFormErrors(validate(contactForm))
+        setSubmitted(false)  
   }
 
   return (
@@ -82,7 +84,6 @@ const ContactFormSection = () => {
                         </form>
                     </>
                 )
-
             }
         </div>
     </section>
