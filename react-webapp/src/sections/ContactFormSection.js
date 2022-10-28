@@ -57,25 +57,26 @@ const ContactFormSection = () => {
         <div className="container">
             {
                 submitted ? 
-                (<div className="d-flex justify-content-center align-items-center">
-                    <div>Thank you for your comment!</div>
+                (<div className="alert alert-success text-center mb-5" role="alert" display="flex">
+                    <h3>Thank you for your comment!</h3>
+                    <h5>We will contact you in 48 hours</h5>
                 </div>)
                 :
                 (
                     <>
                         <h2>Come in Contact with Us</h2>
-                        <pre>{JSON.stringify(formErrors) }</pre>
+                        {/* <pre>{JSON.stringify(formErrors) }</pre> */}
                         <form onSubmit={handleSubmit} noValidate>
                             <div>
-                                <input id="name" type="text"  className="error" onKeyUp={handleKeyUp} placeholder="Your Name" value={contactForm.name} onChange={handleChange} />
+                                <input id="name"  type="text"  className={(formErrors.name ? 'error': '')} onKeyUp={handleKeyUp} placeholder="Your Name" value={contactForm.name} onChange={handleChange} />
                                 <div className="errorMessage">{formErrors.name}</div>
                             </div>
                             <div>
-                                <input id="email" type="email" className="error" onKeyUp={handleKeyUp} placeholder="Your email" value={contactForm.email} onChange={handleChange} />
+                                <input id="email" type="email" className={(formErrors.email ? 'error': '')}  onKeyUp={handleKeyUp} placeholder="Your email" value={contactForm.email} onChange={handleChange} />
                                 <div className="errorMessage">{formErrors.email}</div>
                             </div>
                             <div className="textarea">
-                                <textarea id="comment" className="error" onKeyUp={handleKeyUp} placeholder="Comments" value={contactForm.comment} onChange={handleChange}></textarea>
+                                <textarea id="comment" className={(formErrors.comment ? 'error': '')} onKeyUp={handleKeyUp} placeholder="Comments" value={contactForm.comment} onChange={handleChange}></textarea>
                                 <div className="errorMessage">{formErrors.comment}</div>
                             </div>
                             <div className="formBtn">
