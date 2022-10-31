@@ -10,11 +10,11 @@ const ContactsView = () => {
 
   return (
     <>
-      {/* <NavigationBarSection />
+      <NavigationBarSection />
       <BreadcrumbSection currentPage="Contacts" />
       <MapSection />
-      <FooterSection /> */}
       <ContactFormSection />
+      <FooterSection /> 
     </>
   )
 }
