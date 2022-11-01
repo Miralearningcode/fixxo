@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, createContext} from 'react'
 import './style.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -17,8 +17,11 @@ import NotFoundView from './views/NotFoundView';
 import FooterSection from './sections/FooterSection';
 import NavigationBarSection from './sections/NavigationBarSection';
 
+const ProductContext = createContext()
+
 function App() {
 
+  
   const [featuredProducts, setFeaturedProducts] = useState([
     { id: 1, name: "Modern Black Blouse", category: "Fashion", price: "$35.00", rating: 5, img: "https://images.pexels.com/photos/13452650/pexels-photo-13452650.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"},
     { id: 2, name: "Modern Black Blouse", category: "Fashion", price: "$35.00", rating: 5, img: "https://images.pexels.com/photos/13452650/pexels-photo-13452650.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"},
@@ -28,19 +31,20 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ProductContext.Provider value={featuredProducts}>
       <Routes>
-        <Route path="/" element={<HomeView  items={featuredProducts} />} />
+        <Route path="/" element={<HomeView />} />
         <Route path="/categories" element={<CategoriesView />} />
-        <Route path="/products" element={<ProductsView items={featuredProducts} />} />
+        <Route path="/products" element={<ProductsView />} />
         <Route path="/products/:name" element={<ProductDetailsView />} />
         <Route path="/contacts" element={<ContactsView />} />
         <Route path="/search" element={<SearchView />} />
         <Route path="/compare" element={<CompareView />} />
         <Route path="/wishlist" element={<WishListView />} />
         <Route path="/shoppingcart" element={<ShoppingCartView />} />
-
         <Route path="*" element={<NotFoundView />} />
       </Routes>
+      </ProductContext.Provider> 
     </BrowserRouter>
   );
 }

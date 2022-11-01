@@ -1,13 +1,14 @@
+import React from 'react'
 import FooterSection from '../sections/FooterSection'
 import NavigationBarSection from '../sections/NavigationBarSection'
 import ProductGridSection from '../sections/ProductGridSection'
 
-const HomeView = ({items = []}) => {
+const HomeView = () => {
   window.top.document.title = 'Fixxo.'
   return (
     <>
       <NavigationBarSection />
-      <ProductGridSection title="Featured Products" products={items} />
+      <ProductGridSection title="Featured Products" />
       <FooterSection />
     </>
   )
