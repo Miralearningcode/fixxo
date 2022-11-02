@@ -1,4 +1,4 @@
-import React, { useState, createContext} from 'react'
+import React, {useEffect, useState} from 'react'
 import './style.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -16,22 +16,38 @@ import ShoppingCartView from './views/ShoppingCartView';
 import NotFoundView from './views/NotFoundView';
 import FooterSection from './sections/FooterSection';
 import NavigationBarSection from './sections/NavigationBarSection';
+import { ProductContext } from './contexts/contexts'
 
-const ProductContext = createContext()
 
 function App() {
-
+  const [products, setProducts] = useState({
+    allProducts: [],
+    featuredProducts: []
+  })
   
-  const [featuredProducts, setFeaturedProducts] = useState([
-    { id: 1, name: "Modern Black Blouse", category: "Fashion", price: "$35.00", rating: 5, img: "https://images.pexels.com/photos/13452650/pexels-photo-13452650.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"},
-    { id: 2, name: "Modern Black Blouse", category: "Fashion", price: "$35.00", rating: 5, img: "https://images.pexels.com/photos/13452650/pexels-photo-13452650.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"},
-    { id: 3, name: "Modern Black Blouse", category: "Fashion", price: "$35.00", rating: 5, img: "https://images.pexels.com/photos/13452650/pexels-photo-13452650.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"},
-    { id: 4, name: "Modern Black Blouse", category: "Fashion", price: "$35.00", rating: 5, img: "https://images.pexels.com/photos/13452650/pexels-photo-13452650.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"}
-  ])
+
+  useEffect(() => {
+    const fetchAllProducts = async () => {
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
+      setProducts({...products, allProducts: await result.json()})
+    }
+    fetchAllProducts()
+
+    const fetchFeaturedProducts = async () => {
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
+      setProducts({...products, featuredProducts: await result.json()})
+    }
+    fetchFeaturedProducts()
+
+
+  }, [setProducts]) 
+
+  //[] is a trigger, without it, it will spam the API
+
 
   return (
     <BrowserRouter>
-      <ProductContext.Provider value={featuredProducts}>
+      <ProductContext.Provider value={products}>
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/categories" element={<CategoriesView />} />

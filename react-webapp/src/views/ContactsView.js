@@ -6,7 +6,7 @@ import MapSection from '../sections/MapSection'
 import NavigationBarSection from '../sections/NavigationBarSection'
 
 const ContactsView = () => {
-  window.top.document.title = 'Contacts | Fixxo.'
+  // window.top.document.title = 'Contacts | Fixxo.'
 
   return (
     <>
