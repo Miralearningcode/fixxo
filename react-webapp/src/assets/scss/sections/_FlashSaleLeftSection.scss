@@ -1,4 +1,4 @@
-.flashsale {
+.flashsale-left {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
@@ -23,21 +23,32 @@
             color: $color-theme-dark-2;
             width: 150px;
 
-            
             .btn-theme-left-border {
                 border-left: 2px solid $color-theme-dark-2;
                 border-top: 2px solid $color-theme-dark-2;
-               
-    
             }
+
             .btn-theme-right-border {
                 border-right: 2px solid $color-theme-dark-2;
                 border-bottom: 2px solid $color-theme-dark-2;
-                
             }
+
             &:hover {
+                transition: 0.3s ease-in-out; 
                 color: $color-white;
                 background-color: $color-theme-dark-1;
+
+                .btn-theme-left-border {
+                    transition: 0.3s ease-in-out; 
+                    border-left: 2px solid $color-white;
+                    border-top: 2px solid $color-white;
+                }
+
+                .btn-theme-right-border {
+                    transition: 0.3s ease-in-out; 
+                    border-right: 2px solid $color-white;
+                    border-bottom: 2px solid $color-white;
+                }
             }
         }
     }

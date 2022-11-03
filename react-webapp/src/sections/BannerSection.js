@@ -7,8 +7,8 @@ const BannerSection = () => {
     <section className="banner-section">
     <div className="container">
         <div className="row row-cols-1 row-cols-md-2 g-4"> 
-        <img src={PamelaReif} alt="Pamela Reif banner" />
-        <img src={ConsciousBanner} alt="Let's be conscious banner" />
+          <img src={PamelaReif} alt="Pamela Reif banner" />
+          <img src={ConsciousBanner} alt="Let's be conscious banner" />
         </div>
     </div>
 </section>

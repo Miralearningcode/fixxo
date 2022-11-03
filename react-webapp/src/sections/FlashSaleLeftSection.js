@@ -3,7 +3,7 @@ import React from 'react'
 
 const FlashSaleLeftSection = () => {
   return (
-    <section className="flashsale container">
+    <section className="flashsale-left container">
         <div className="flashsale-box">
             <h1 className="flashsale-title">2 FOR USD $29</h1>
             <button className="btn btn-lg btn-theme">

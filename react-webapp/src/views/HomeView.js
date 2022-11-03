@@ -6,6 +6,7 @@ import { ProductContext } from '../contexts/contexts'
 import HeroSection from '../sections/HeroSection'
 import BannerSection from '../sections/BannerSection'
 import FlashSaleLeftSection from '../sections/FlashSaleLeftSection'
+import AboutUsSection from '../sections/AboutUsSection'
 
 
 const HomeView = () => {
@@ -18,6 +19,7 @@ const HomeView = () => {
       <ProductGridSection title="Featured Products" items={productContext.featuredProducts}/>
       <BannerSection />
       <FlashSaleLeftSection />
+      <AboutUsSection />
       <FooterSection />
     </>
   )
