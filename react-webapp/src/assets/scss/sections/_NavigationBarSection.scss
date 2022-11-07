@@ -1,8 +1,7 @@
 .navigation-bar {
-    width: 100%;
-    position: fixed;
-    z-index: 3; 
-
+    // width: 100%;
+    // position: fixed;
+    // z-index: 3; 
 
      .container {
         display: grid;
@@ -11,7 +10,6 @@
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "logo navigationicons"
                             "navigationlinks navigationlinks";
-        
     }
 
     .logotype {

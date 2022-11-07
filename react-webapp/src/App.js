@@ -16,36 +16,44 @@ import ShoppingCartView from './views/ShoppingCartView';
 import NotFoundView from './views/NotFoundView';
 import FooterSection from './sections/FooterSection';
 import NavigationBarSection from './sections/NavigationBarSection';
-import { ProductContext } from './contexts/contexts'
+
+import { ProductsContext, FeaturedProductsContext, FlashSaleLeftContext } from './contexts/contexts'
 
 
-function App() {
-  const [products, setProducts] = useState({
-    all: [],
-    featuredProducts: []
-  })
   
-  useEffect(() => {
-    const fetchAllProducts = async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
-      setProducts({...products, all: await result.json()})
-    }
-    fetchAllProducts()
+  
+  function App() {
+    const [products, setProducts] = useState([])
+    const [featured, setFeatured] = useState([])
+    const [flashSaleLeft, setFlashSaleLeft] = useState([])
+  
+    useEffect(() => {
+      const fetchAllData = async () => {
+        const result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
+        setProducts(await result.json())
+      }
+      fetchAllData()
+  
+      const fetchFeaturedData = async () => {
+        const result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
+        setFeatured(await result.json())
+      }
+      fetchFeaturedData()
 
-    const fetchFeaturedProducts = async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
-      setProducts({...products, featuredProducts: await result.json()})
-    }
-    fetchFeaturedProducts()
-
-  }, [setProducts]) 
-
-  //[] is a trigger, without it, it will spam the API
-
+      const fetchFlashSaleLeftData = async () => {
+        const result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
+        setFlashSaleLeft(await result.json())
+      }
+      fetchFlashSaleLeftData()
+  
+    }, [setProducts, setFeatured, setFlashSaleLeft ])  
+    //[] is a trigger, without it, it will spam the API, always [] after useEffect, some dependency parts won't work, setProducts works fine, but products would not work for example.
 
   return (
     <BrowserRouter>
-      <ProductContext.Provider value={products}>
+      <ProductsContext.Provider value={products}>
+      <FeaturedProductsContext.Provider value={featured}>
+      <FlashSaleLeftContext.Provider value={featured}>
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/categories" element={<CategoriesView />} />
@@ -58,7 +66,9 @@ function App() {
         <Route path="/shoppingcart" element={<ShoppingCartView />} />
         <Route path="*" element={<NotFoundView />} />
       </Routes>
-      </ProductContext.Provider> 
+      </FlashSaleLeftContext.Provider>
+      </FeaturedProductsContext.Provider>
+      </ProductsContext.Provider> 
     </BrowserRouter>
   );
 }
