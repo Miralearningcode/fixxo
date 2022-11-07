@@ -53,7 +53,7 @@ import { ProductsContext, FeaturedProductsContext, FlashSaleLeftContext } from '
     <BrowserRouter>
       <ProductsContext.Provider value={products}>
       <FeaturedProductsContext.Provider value={featured}>
-      <FlashSaleLeftContext.Provider value={featured}>
+      <FlashSaleLeftContext.Provider value={flashSaleLeft}>
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/categories" element={<CategoriesView />} />
