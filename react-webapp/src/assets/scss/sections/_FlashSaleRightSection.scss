@@ -1,4 +1,4 @@
-.flashsale-left {
+.flashsale-right {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
@@ -64,7 +64,8 @@
             // max-width: 800px;
 
             .card {
-                margin-left: -10px;
+                margin-left: 418px;
+                margin-right: -580px;
                 width: 180px;
 
                 .card-img {
@@ -83,4 +84,3 @@
         }
     }
 }
-

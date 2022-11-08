@@ -17,7 +17,7 @@ import NotFoundView from './views/NotFoundView';
 import FooterSection from './sections/FooterSection';
 import NavigationBarSection from './sections/NavigationBarSection';
 
-import { ProductsContext, FeaturedProductsContext, FlashSaleLeftContext } from './contexts/contexts'
+import { ProductsContext, FeaturedProductsContext, FlashSaleLeftContext, FlashSaleRightContext } from './contexts/contexts'
 
 
   
@@ -26,6 +26,7 @@ import { ProductsContext, FeaturedProductsContext, FlashSaleLeftContext } from '
     const [products, setProducts] = useState([])
     const [featured, setFeatured] = useState([])
     const [flashSaleLeft, setFlashSaleLeft] = useState([])
+    const [flashSaleRight, setFlashSaleRight] = useState([])
   
     useEffect(() => {
       const fetchAllData = async () => {
@@ -45,8 +46,14 @@ import { ProductsContext, FeaturedProductsContext, FlashSaleLeftContext } from '
         setFlashSaleLeft(await result.json())
       }
       fetchFlashSaleLeftData()
+
+      const fetchFlashSaleRightData = async () => {
+        const result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
+        setFlashSaleRight(await result.json())
+      }
+      fetchFlashSaleRightData()
   
-    }, [setProducts, setFeatured, setFlashSaleLeft ])  
+    }, [setProducts, setFeatured, setFlashSaleLeft, setFlashSaleRight])  
     //[] is a trigger, without it, it will spam the API, always [] after useEffect, some dependency parts won't work, setProducts works fine, but products would not work for example.
 
   return (
@@ -54,6 +61,7 @@ import { ProductsContext, FeaturedProductsContext, FlashSaleLeftContext } from '
       <ProductsContext.Provider value={products}>
       <FeaturedProductsContext.Provider value={featured}>
       <FlashSaleLeftContext.Provider value={flashSaleLeft}>
+      <FlashSaleRightContext.Provider value={flashSaleRight}>
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/categories" element={<CategoriesView />} />
@@ -66,6 +74,7 @@ import { ProductsContext, FeaturedProductsContext, FlashSaleLeftContext } from '
         <Route path="/shoppingcart" element={<ShoppingCartView />} />
         <Route path="*" element={<NotFoundView />} />
       </Routes>
+      </FlashSaleRightContext.Provider>
       </FlashSaleLeftContext.Provider>
       </FeaturedProductsContext.Provider>
       </ProductsContext.Provider> 

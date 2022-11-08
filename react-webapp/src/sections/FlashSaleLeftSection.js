@@ -18,7 +18,7 @@ const FlashSaleLeftSection = ({title, items = []}) => {
             <h1>{title}</h1>
             <div className="row row-cols-1 row-cols-md-2 g-6"> 
                 {
-                  items.map(product => <ProductCardComponent key={product.articleNumber} product={product} />) //Hans har item={product}
+                  items.map(product => <ProductCardComponent key={product.articleNumber} product={product} />) 
                 }  
             </div>  
         </div>

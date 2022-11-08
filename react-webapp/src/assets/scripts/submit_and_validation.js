@@ -43,7 +43,7 @@ const validate_name = (value) => {
     if (!value)
         return 'A name is required'
     else if (!regex_name.test(value))
-        return 'Must be a valid name'
+        return 'Must be a valid name, a minimum of two letters and letters only.'
     else
         return null
 }
@@ -54,7 +54,7 @@ const validate_email = (value) => {
     if (!value)
         return 'An email address is required'
     else if (!regex_email.test(value))
-        return 'Must be a valid email address'
+        return 'Must be a valid email address, eg name@domain.com'
     else
         return null
 }
