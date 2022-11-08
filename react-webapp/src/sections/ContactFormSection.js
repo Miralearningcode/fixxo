@@ -92,7 +92,7 @@ const ContactFormSection = () => {
             <div className="errorMessage">{errors.email}</div>
           </div>
           <div className="textarea">
-            <textarea id="comments" className={(errors.comment ? 'error': '')} value={comments} onChange={handleChange} placeholder="Comments"></textarea>
+          <textarea id="comments" className={(errors.comments ? 'error': '')} style={(errors.comments ? {border: '1px solid #FF7373'}: {} )} value={comments} onChange={handleChange} placeholder="Comments"></textarea>
             <div className="errorMessage">{errors.comments}</div>
           </div>
           <div className="formBtn">

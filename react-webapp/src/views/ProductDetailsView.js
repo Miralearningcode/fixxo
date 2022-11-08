@@ -10,7 +10,7 @@ const ProductDetailsView = () => {
     <>
         <NavigationBarSection />
         <div className="container mt-5"> 
-            <hi>{params.name}</hi>
+            <h1>{params.name}</h1>
         </div>
         <FooterSection />
     </>
