@@ -7,7 +7,7 @@ const NotFoundView = () => {
   return (
     <>
       <NavigationBarSection />
-        <div className="not-found-view container d-flex justify-content-center align-items-center" style={ { height: "500px"} }>
+        <div className="not-found-view">
           <img src={PageNotFound} alt="404 - Page Not Found" />
         </div>
         <div style={ { position: "fixed", bottom: "0"} }></div>

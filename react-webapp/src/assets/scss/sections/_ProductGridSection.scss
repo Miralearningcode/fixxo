@@ -100,7 +100,6 @@
             }
             .btn-card-theme {
                 display: flex !important;
-                // background-color: $color-theme;
             }
         }
     }
@@ -110,7 +109,7 @@
 @media (min-width: 1200px) {
     .product-grid {    
         .container {
-            max-width: 800px; //900 hade jag först
+            max-width: 800px;
         }
     }
 }

@@ -27,7 +27,7 @@
                 right: 10px;
                 display: none;
 
-                .btn-light { //.menu-link
+                .btn-light { 
                     
 
                 }
@@ -89,7 +89,6 @@
             }
             .btn-card-theme {
                 display: flex;
-                // background-color: $color-theme;
             }
         }
     }
@@ -99,7 +98,7 @@
 @media (min-width: 1200px) {
     .product-grid {    
         .container {
-            max-width: 800px; //900 hade jag först
+            max-width: 800px; 
         }
     }
 }
